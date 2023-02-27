@@ -1,12 +1,13 @@
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
 
-ENTITY tab_func IS
-	PORT (x, y, z: IN std_logic;
-			salida: out std_logic);
-END tab_func;
+entity tab_func is
+  port (
+    x, y, z : in std_logic;
+    salida : out std_logic);
+end tab_func;
 
-ARCHITECTURE Behavioral OF tab_func IS
-BEGIN
-	salida <= (x AND (NOT y)) OR ((NOT x) AND z);
-END Behavioral;
+architecture Behavioral of tab_func is
+begin
+  salida <= (x and (not y)) or ((not x) and z);
+end Behavioral;
