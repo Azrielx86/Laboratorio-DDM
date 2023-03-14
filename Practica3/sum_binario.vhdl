@@ -36,7 +36,7 @@ begin
 
 	half_adder : half_add port map(
 		A => Asb(0),
-		B => Bsb(1),
+		B => Bsb(0),
 		C => aux_1, -- signal
 		S => Ssb(0) -- salida de half_add
 	);
@@ -53,8 +53,8 @@ begin
 		A => Asb(2),
 		B => Bsb(2),
 		Cin => aux_2,
-		Co => Ssb(2),
-		S => Ssb(3)
+		Co => Ssb(3),
+		S => Ssb(2)
 	);
 
 end Behavioral;
