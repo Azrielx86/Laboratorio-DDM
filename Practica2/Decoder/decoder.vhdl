@@ -12,7 +12,7 @@ architecture Behavioral of decoder is
 begin
   with input select
     output <= "0000001" when "0000", -- 0
-    "0110000" when "0001", -- 1
+    "1001111" when "0001", -- 1
     "0010010" when "0010", -- 2
     "0000110" when "0011", -- 3
     "1001100" when "0100", -- 4

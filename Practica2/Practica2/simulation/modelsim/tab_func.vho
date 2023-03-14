@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition"
 
--- DATE "03/06/2023 19:46:20"
+-- DATE "03/07/2023 07:37:47"
 
 -- 
 -- Device: Altera 10M50DCF484C7G Package FBGA484
@@ -89,7 +89,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	tab_func IS
     PORT (
 	entrada : IN std_logic_vector(2 DOWNTO 0);
-	display : OUT std_logic_vector(6 DOWNTO 0)
+	display : BUFFER std_logic_vector(6 DOWNTO 0)
 	);
 END tab_func;
 

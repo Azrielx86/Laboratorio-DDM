@@ -11,13 +11,13 @@ end entity;
 architecture Behavioral of tab_func is
 begin
   with entrada select
-    display <= "1000000" when "000",
-    "1000110" when "001",
-    "0000110" when "010",
-    "0000110" when "011",
-    "0010010" when "100",
-    "0010010" when "101",
-    "0010010" when "110",
+    display <= "1000000" when "000", -- 0
+    "1000110" when "001", -- C
+    "0000110" when "010", -- E
+    "0000110" when "011", -- E
+    "0010010" when "100", -- S
+    "0010010" when "101", -- S
+    "0010010" when "110", -- S
     "0000000" when others;
 
 end architecture;
