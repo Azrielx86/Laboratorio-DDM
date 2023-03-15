@@ -1,5 +1,8 @@
-# Laboratorio-DDM
+# Laboratorio de Diseño Digital Moderno 
+
 Prácticas del Laboratorio de Diseño Digital Moderno
+
+FI UNAM - Semestre 2023-2
 
 ## Práctica 1
 
