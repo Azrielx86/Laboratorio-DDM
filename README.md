@@ -15,3 +15,7 @@ Display de 7 segmentos y estructura with - select
 ## Práctica 3
 
 Programación modular
+
+## Práctica 4
+
+Uso de process
