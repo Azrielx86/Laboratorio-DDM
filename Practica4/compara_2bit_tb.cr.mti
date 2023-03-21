@@ -1,0 +1,11 @@
+/home/ayame/FI_UNAM/LabDDM/Laboratorio-DDM/Practica4/compara_2bit.vhdl {1 {vcom -work work -2002 -explicit -stats=none /home/ayame/FI_UNAM/LabDDM/Laboratorio-DDM/Practica4/compara_2bit.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity compara_2bit
+-- Compiling architecture Behavioral of compara_2bit
+
+} {} {}}

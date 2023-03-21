@@ -33,18 +33,21 @@ Instance : compara_2bit
 	
 Always : process
 	begin
-		wait for 50ns;
 		A_tb <= "01";
 		B_tb <= "00";
-		wait for 50ns;
+		wait for 40 ns;
 		A_tb <= "01";
 		B_tb <= "10";
-		wait for 50ns;
+		wait for 40 ns;
 		A_tb <= "01";
 		B_tb <= "01";
-		wait for 50ns;
+		wait for 40 ns;
+		A_tb <= "11";
+		B_tb <= "01";
+		wait for 40 ns;
 		A_tb <= "10";
 		B_tb <= "10";
+		wait for 40 ns;
 		wait;
-end process;
+	end process;
 end testbench;
