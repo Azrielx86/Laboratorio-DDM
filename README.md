@@ -19,3 +19,7 @@ Programación modular
 ## Práctica 4
 
 Uso de process
+
+## Práctica 5
+
+Implementación de un multiplexor
