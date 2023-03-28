@@ -10,8 +10,7 @@ entity multiplexor is
 		sel1: in std_logic;
 		sel2: in std_logic_vector(1 downto 0);
 		sel3: in std_logic;
-		output : out std_logic_vector(3 downto 0);
-		indicator : out std_logic_vector(6 downto 0)
+		output : out std_logic_vector(3 downto 0)
 	);
 end entity;
 
@@ -53,10 +52,8 @@ process (sel1)
 begin
 	if (sel1 = '1') then
 		output <= arith_s;
-		indicator <= "0001000";
 	else
 		output <= logic_s;
-		indicator <= "1000111";
 	end if;
 end process;
 end architecture;
