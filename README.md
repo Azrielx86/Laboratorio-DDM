@@ -23,3 +23,11 @@ Uso de process
 ## Práctica 5
 
 Implementación de un multiplexor
+
+## Práctica 6
+
+Divisor de frecuencias
+
+## Práctica 7
+
+Flip Flop D
