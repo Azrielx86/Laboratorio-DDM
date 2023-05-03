@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 07:05:37  April 26, 2023
+# Date created = 07:01:11  May 03, 2023
 #
 # -------------------------------------------------------------------------- #
 #
@@ -37,10 +37,10 @@
 
 
 set_global_assignment -name FAMILY "MAX 10"
-set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name DEVICE 10M50DAF484I7G
 set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:05:37  APRIL 26, 2023"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:01:11  MAY 03, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -51,13 +51,10 @@ set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE DivisorFrecuencias.vhdl
-set_global_assignment -name VHDL_FILE decoder.vhdl
-set_global_assignment -name VHDL_FILE main.vhdl
+set_global_assignment -name VHDL_FILE flipflopd.vhdl
 set_global_assignment -name VHDL_FILE flipflopjk.vhdl
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE DivisorFrecuencias.vhdl
+set_global_assignment -name VHDL_FILE main.vhdl
 set_global_assignment -name ENABLE_OCT_DONE ON
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
@@ -66,21 +63,41 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name BOARD "MAX 10 NEEK"
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
-set_location_assignment PIN_C17 -to display1[6]
-set_location_assignment PIN_D17 -to display1[5]
-set_location_assignment PIN_E16 -to display1[4]
-set_location_assignment PIN_C15 -to display1[2]
-set_location_assignment PIN_C16 -to display1[3]
-set_location_assignment PIN_E15 -to display1[1]
-set_location_assignment PIN_C14 -to display1[0]
-set_location_assignment PIN_B17 -to display2[6]
-set_location_assignment PIN_A18 -to display2[5]
-set_location_assignment PIN_A17 -to display2[4]
-set_location_assignment PIN_B16 -to display2[3]
-set_location_assignment PIN_E18 -to display2[2]
-set_location_assignment PIN_D18 -to display2[1]
-set_location_assignment PIN_C18 -to display2[0]
-set_location_assignment PIN_B11 -to reloj
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE palabras.vhdl
+set_global_assignment -name VHDL_FILE transfer.vhdl
+set_location_assignment PIN_P11 -to clock
+set_location_assignment PIN_C17 -to Display1[6]
+set_location_assignment PIN_D17 -to Display1[5]
+set_location_assignment PIN_E16 -to Display1[4]
+set_location_assignment PIN_C16 -to Display1[3]
+set_location_assignment PIN_C15 -to Display1[2]
+set_location_assignment PIN_E15 -to Display1[1]
+set_location_assignment PIN_C14 -to Display1[0]
+set_location_assignment PIN_B17 -to Display2[6]
+set_location_assignment PIN_A18 -to Display2[5]
+set_location_assignment PIN_A17 -to Display2[4]
+set_location_assignment PIN_B16 -to Display2[3]
+set_location_assignment PIN_E18 -to Display2[2]
+set_location_assignment PIN_D18 -to Display2[1]
+set_location_assignment PIN_C18 -to Display2[0]
+set_location_assignment PIN_B22 -to Display3[6]
+set_location_assignment PIN_C22 -to Display3[5]
+set_location_assignment PIN_B21 -to Display3[4]
+set_location_assignment PIN_A21 -to Display3[3]
+set_location_assignment PIN_B19 -to Display3[2]
+set_location_assignment PIN_A20 -to Display3[1]
+set_location_assignment PIN_B20 -to Display3[0]
+set_location_assignment PIN_E17 -to Display4[6]
+set_location_assignment PIN_D19 -to Display4[5]
+set_location_assignment PIN_C20 -to Display4[4]
+set_location_assignment PIN_C19 -to Display4[3]
+set_location_assignment PIN_E21 -to Display4[2]
+set_location_assignment PIN_E22 -to Display4[1]
+set_location_assignment PIN_F21 -to Display4[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

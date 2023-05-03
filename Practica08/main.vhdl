@@ -1,99 +1,68 @@
-library ieee;
-use ieee.std_logic_1164.all;
-
+library IEEE;
+use IEEE.std_logic_1164.ALL;
+use IEEE.std_logic_arith.ALL;
+use IEEE.std_logic_unsigned.ALL;
 entity main is
-  port (
-    display : out std_logic_vector(6 downto 0);
-    sel : in std_logic;
-    rst : in std_logic;
-    clk : std_logic
-  );
-end entity;
-
-architecture behavioral of main is
-  component flipflopjk is
-    port (
-      clk : in std_logic;
-      reset : in std_logic;
-      j : in std_logic;
-      k : in std_logic;
-      q : out std_logic;
-      qn : out std_logic
-    );
-  end component;
-
-  component DivisorFrecuencias is
-    port (
-      reloj : std_logic;
-      div_clk : out std_logic
-    );
-  end component;
-
-  component decoder is
-    port (
-      input : in std_logic_vector(3 downto 0);
-      output : out std_logic_vector(6 downto 0)
-    );
-  end component;
-  signal divfout : std_logic;
-  signal qv : std_logic_vector(3 downto 0); -- q vector
-  signal qnv : std_logic_vector(3 downto 0); -- qn vector
-  signal disp_in : std_logic_vector(3 downto 0); -- display in vector
-  --signal disp_out : std_logic_vector(6 downto 0); -- display vector
-
+Port ( reloj : in std_logic;
+display1, display2: out std_logic_vector (6 downto 0));
+end main;
+architecture Behavioral of main is
+signal segundo, N : std_logic;
+signal U, D : std_logic_vector(3 downto 0);
 begin
-  divfreq : DivisorFrecuencias port map(
-    reloj => clk,
-    div_clk => divfout
-  );
-
-  fflop1 : flipflopjk port map(
-    clk => divfout,
-    reset => rst,
-    j => '1',
-    k => '1',
-    q => qv(0),
-    qn => qnv(0)
-  );
-
-  fflop2 : flipflopjk port map(
-    clk => qv(0),
-    reset => rst,
-    j => '1',
-    k => '1',
-    q => qv(1),
-    qn => qnv(1)
-  );
-
-  fflop3 : flipflopjk port map(
-    clk => qv(1),
-    reset => rst,
-    j => '1',
-    k => '1',
-    q => qv(2),
-    qn => qnv(2)
-  );
-
-  fflop4 : flipflopjk port map(
-    clk => qv(2),
-    reset => rst,
-    j => '1',
-    k => '1',
-    q => qv(3),
-    qn => qnv(3)
-  );
-
-  disp : decoder port map(
-    input => disp_in,
-    output => display
-  );
-
-  process (sel)
-  begin
-    if (sel = '1') then
-      disp_in <= qv;
-    else
-      disp_in <= qnv;
-    end if;
-  end process;
-end architecture;
+Divi : process (reloj)
+variable cuenta: std_logic_vector(27 downto 0) := X"0000000";
+begin
+if rising_edge (reloj) then
+if cuenta =X"48009E0" then
+cuenta := X"0000000";
+else
+cuenta := cuenta+1;
+end if; end if;
+segundo <= cuenta (24);
+end process;
+Unidades: process (segundo)
+variable cuenta: std_logic_vector( 3 downto 0) := "0000";
+begin
+if rising_edge (segundo) then
+if cuenta ="1001" then
+cuenta :="0000";
+N <= '1';
+else
+cuenta := cuenta + 1;
+N <= '0';
+end if; end if;
+U <= cuenta;
+end process;
+Decenas: process (N)
+variable cuenta: std_logic_vector( 3 downto 0) := "0000";
+begin
+if rising_edge (N) then
+if cuenta ="0101" then
+cuenta :="0000";
+else
+cuenta := cuenta +1;
+end if; end if;
+D <= cuenta;
+end process;
+with U select
+display1 <= "1000000" when "0000", --0
+"1111001" when "0001", --1
+"0100100" when "0010", --2
+"0110000" when "0011", --3
+"0011001" when "0100", --4
+"0010010" when "0101", --5
+"0000010" when "0110", --6
+"1111000" when "0111", --7
+"0000000" when "1000", --8
+"0010000" when "1001", --9
+"1000000" when others; --F
+with D select
+display2<= "1000000" when "0000", --0
+"1111001" when "0001", --1
+"0100100" when "0010", --2
+"0110000" when "0011", --3
+"0011001" when "0100", --4
+"0010010" when "0101", --5
+"1000000" when others; --F
+end Behavioral;
