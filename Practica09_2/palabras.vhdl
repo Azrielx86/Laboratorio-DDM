@@ -29,10 +29,10 @@ begin
       when "001" => display <= "1000000"; --O
       when "010" => display <= "1000111"; --L
       when "011" => display <= "0001000"; --A
-			when "100" => display <= "0001100"; --P
-			when "101" => display <= "1000000"; --O
-			when "110" => display <= "1000111"; --L
-			when "111" => display <= "1000000"; --O
+      when "100" => display <= "0001100"; --P
+      when "101" => display <= "1000000"; --O
+      when "110" => display <= "1000111"; --L
+      when "111" => display <= "1000000"; --O
       when others => display <= "1111111"; --OFF
     end case;
   end process;
