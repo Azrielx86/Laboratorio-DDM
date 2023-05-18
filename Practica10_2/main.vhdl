@@ -39,11 +39,11 @@ begin
   process (PS, r)
   begin
     g <= "000";
-		display <= "0000000";
+		display <= "1111111";
     case PS is
       when idle =>
         g <= "000";
-				display <= "0000000";
+				display <= "1111111";
         if r = "000" then
           NS <= idle;
         elsif r(0) = '1' then
@@ -58,7 +58,7 @@ begin
 
       when grant1 =>
         g <= "100";
-				display <= "1001111";
+				display <= "1111001";
         if r(0) = '1' then
           NS <= grant1;
         elsif r(0) = '0' then
@@ -68,7 +68,7 @@ begin
       when grant2 =>
         -- g(1) <= '1';
 				g <= "010";
-				display <= "0010010";
+				display <= "0100100";
         if r(1) = '1' then
           NS <= grant2;
         elsif r(1) = '0' then
@@ -78,7 +78,7 @@ begin
       when grant3 =>
         --g(2) <= '1';
 				g <= "001";
-				display <= "0000110";
+				display <= "0110000";
         if r(2) = '1' then
           NS <= grant3;
         elsif r(2) = '0' then
@@ -86,7 +86,7 @@ begin
         end if;
       when others =>
 				g <= "000";
-				display <= "0000000";
+				display <= "1111111";
         NS <= idle;
     end case;
   end process;

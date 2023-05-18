@@ -41,7 +41,6 @@ architecture behavioral of main is
   signal Lds1 : std_logic_vector(6 downto 0);
   signal Lds2 : std_logic_vector(6 downto 0);
   signal Lds3 : std_logic_vector(6 downto 0);
-  signal Lds4 : std_logic_vector(6 downto 0);
 begin
   div_frec : DivisorFrecuencias port map(
     reloj => clock,

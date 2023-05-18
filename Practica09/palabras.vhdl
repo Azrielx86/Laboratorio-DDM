@@ -25,10 +25,10 @@ begin
   process (Qin)
   begin
     case Qin is
-      when "00" => display <= "0001001";
-      when "01" => display <= "1000000";
-      when "10" => display <= "1000111";
-      when "11" => display <= "0001000";
+      when "00" => display <= "0001001"; -- H
+      when "01" => display <= "1000000"; -- O
+      when "10" => display <= "1000111"; -- L
+      when "11" => display <= "0001000"; -- A
       when others => display <= "1111111";
     end case;
   end process;
