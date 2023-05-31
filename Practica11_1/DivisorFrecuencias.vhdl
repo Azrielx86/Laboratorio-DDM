@@ -4,9 +4,6 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 entity DivisorFrecuencias is
-  generic (
-    max : std_logic_vector(27 downto 0) := X"17D7840"
-  );
   port (
     reloj : std_logic;
     div_clk : out std_logic;
